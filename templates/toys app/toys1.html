@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    {% extends "layout/main1.html" %}
+    {% load static %}
+    {% block content %}
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Yami Toys{% endblock %}</title>
+        <link rel="stylesheet" href="{% static 'toys/bootstrap1.css' %}">
+        <link rel="stylesheet" href="{% static 'toys/style2.css' %}">
+    </head>
+    <body>
+      <h1 class="h_1">игрушки</h1>
+      <div class="container">
+          <div class="row">
+            {% for ty in toy %}
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="block">
+                <a class="link1" href="{{ ty.get_absolute_url }}">
+                  <img class='image' src="{% if ty.image %} {{ ty.image.url }} {% else %} {% static 'img/PUPA2.gif' %} {% endif %}" height="450" width="350">
+                </a>
+                <a class="link1" href="{{ ty.get_absolute_url }}">{{ ty.name }}</a><br>
+                <p class="toy"><b>{{ ty.price }}$$$</b></p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+      </div>
+    {% endblock %}
+    </body>
+</html>

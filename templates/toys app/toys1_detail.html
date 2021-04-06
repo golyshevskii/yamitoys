@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    {% extends "layout/main1.html" %}
+    {% load static %}
+    {% block content %}
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Yami Toys{% endblock %}</title>
+        <link rel="stylesheet" href="{% static 'toys/bootstrap1.css' %}">
+        <link rel="stylesheet" href="{% static 'toys/toys1_detail2.css' %}">
+    </head>
+    <body>
+        <h1 class="h_1">игрушки</h1>
+        <div class="container">
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="block">
+                  <img class="image" src="{% if toy.image %} {{ toy.image.url }} {% else %} {% static 'img/PUPA2.gif' %} {% endif %}" height="450" width="350">
+                  <h2 class="h_2">{{ toy.name }}</h2>
+                  <a class="link1" href="{{ toy.typ.get_absolute_url }}">{{ toy.typ }}</a>
+                  <p class="toy"><b>{{ toy.content }}</b></p>
+                  <p class="toy"><b>{{ toy.price }}$$$</b></p>
+                  <form action="{% url 'cart:cart_add' toy.id %}" method="post">
+                    <b>{{ cart_toy_form }}
+                    {% csrf_token %}</b>
+                    <input type="submit" value="добавить">
+                  </form>
+                </div>
+              </div>
+            </div>
+        </div>
+    </body>
+    {% endblock %}
+</html>
