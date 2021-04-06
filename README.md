@@ -9,8 +9,8 @@
 > Based on the Python programming language and the Django Framework (｡◕‿◕｡)
 ## YAMI
 ### toys
-![YAMI](C:/Users/viach/Desktop/golyshevskii/Github/images/YamiToys1.png)
+![YAMI](YamiToys1.png)
 ### details
-![YAMI](C:/Users/viach/Desktop/golyshevskii/Github/images/YamiToys2.png)
+![YAMI](YamiToys2.png)
 ### cart
-![YAMI](C:/Users/viach/Desktop/golyshevskii/Github/images/YamiToys3.png)
+![YAMI](YamiToys3.png)
