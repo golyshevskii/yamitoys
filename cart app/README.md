@@ -1,6 +1,8 @@
 # cart.py
 >Скелет корзины, содержащий в себе класс Cart<br/>
 >Cart skeleton containing the Cart class
+# context_processors.py
+>Контекстный процессор
 # forms.py
 >Форма корзины, для добавления игрушки в корзину<br/>
 >Cart form, for adding toys to the cart
