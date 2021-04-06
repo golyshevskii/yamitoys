@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    {% load static %}
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Main Yami Toys{% endblock %}</title>
+        <link rel="stylesheet" href="{% static 'toys/bootstrap1.css' %}">
+        <link rel="stylesheet" href="{% static 'toys/main1.css' %}">
+    </head>
+    <body>
+        <div class="menu">
+            <button onclick="myFunction()" class="menubtn">menu</button>
+            <div id="mymenu" class="menu-content">
+              <a href="{% url 'toys:all_toys' %}">игрушки</a><br>
+              <a href="{% url 'cart:cart_detail' %}">корзина</a><br>
+            </div>
+        </div>
+        <div class="cart_block">
+          {% with total_items=cart|length %}
+            {% if cart|length > 0 %}
+              корзина: 
+              <a class="lnk" href="{% url 'cart:cart_detail' %}"><b>{{ total_items }} item{{ total_items|pluralize }},{{ cart.get_total_price }}$$$</b></a>
+            {% else %}
+              <a class="lnk" href="{% url 'cart:cart_detail' %}"><b>корзина пустая</b></a>
+            {% endif %}
+          {% endwith %}
+        </div>
+        <img class="img1" src="{% static 'img/love1.gif' %}">
+        <script>
+            function myFunction() {
+                document.getElementById("mymenu").classList.toggle("show");
+            }
+          
+            window.onclick = function(event) {
+              if (!event.target.matches('.menubtn')) {
+            
+                var dropdowns = document.getElementsByClassName("menu-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                  var openDropdown = dropdowns[i];
+                  if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                  }
+                }
+              }
+            }
+        </script>
+        {% block content %}
+        {% endblock %}<br><br>
+        <a class="link" href="https://mail.google.com/mail/" target="_blank">mailbox: yamitoys@gmail.com</a>
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="block">
+                  <img class='image' src="{% static 'img/flower2.gif' %}" height="175" width="350">
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="block">
+                  <img class='image' src="{% static 'img/flower2.gif' %}" height="175" width="350">
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="block">
+                  <img class='image' src="{% static 'img/flower2.gif' %}" height="175" width="350">
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="block">
+                  <img class='image' src="{% static 'img/flower2.gif' %}" height="175" width="350">
+              </div>
+            </div>
+          </div>
+      </div>
+    </body>
+</html>
