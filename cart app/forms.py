@@ -1,6 +1,5 @@
 from django import forms
 
-
 # количесво возможного выбора игрушек при помещении игрушки в корзину
 # number of possible choice of toys when placing a toy in the cart
 PRODUCT_QUANTITY_CHOICES = [(i, str(i)) for i in range(1, 21)]
