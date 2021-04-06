@@ -1,0 +1,189 @@
+@font-face { 
+    font-family: "PressStart2P"; 
+    src: url("PressStart2P-Regular.ttf");
+} 
+
+@font-face {
+    font-family: "HyperSpace";
+    src: url("HyperSpace.otf");
+}
+
+@keyframes moveDown{
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0%);
+    }
+}
+
+@keyframes movedown{
+    from {
+      transform: translateY(-300%);
+    }
+    to {
+      transform: translateY(0%);
+    }
+}
+
+@keyframes moveLeft{
+    from {
+      transform: translateX(+100%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+}
+
+@keyframes moveUp{
+    from {
+      transform: translateY(+100%);
+    }
+    to {
+      transform: translateY(0%);
+    }
+}
+
+.menubtn {
+    background-color: rgba(255, 171, 171, 0);
+    color: rgb(253, 243, 155);
+    text-shadow: 1px 1px 1px rgb(255, 171, 171),
+                 2px 2px 1px rgb(255, 232, 232);
+    font-family: "PressStart2P";
+    font-size: 42px;
+    font-weight: 100;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    animation-name: moveDown;
+    animation-duration: 1s;
+}
+
+.menu-content {
+    display: none;
+    background-color: rgba(255, 171, 171, 0);
+    overflow: visible;
+    box-shadow: 0px 8px 16px 0px rgba(255, 171, 171, 0);
+    z-index: 1;
+    animation-name: moveDown;
+    animation-duration: 0.5s;
+    text-align: center;
+}
+
+.menu-content a {
+    color: rgb(253, 243, 155);
+    text-shadow: 1px 1px 1px rgb(255, 171, 171),
+                 2px 2px 1px rgb(255, 232, 232);
+    font-family: "PressStart2P";
+    font-size: 42px;
+    font-weight: 100;
+    letter-spacing: 3px;
+    text-decoration: none;
+    display: inline;
+}
+
+.menubtn:hover, .menubtn:focus {
+    color: #ffffff;
+    outline: none;
+}
+
+.menubtn:active, .menubtn:focus {
+    color: rgb(255, 255, 255);
+}
+
+.menu-content a:hover, .menu-content a:focus {
+    color: rgb(255, 255, 255);
+}
+
+.show {
+    display: inline-block;
+}
+
+.h_1 {
+    font-family: "PressStart2P";
+    font-size: 5em;
+    font-weight: 100;
+    color:rgb(253, 243, 155);
+    text-shadow: 1px 1px 1px rgb(255, 171, 171),
+                 2px 2px 1px rgb(255, 232, 232);
+}
+
+.h_2 {
+    color:rgb(253, 243, 155);
+    font-family: "PressStart2P";
+    text-shadow: 1px 1px 1px rgb(255, 171, 171),
+                 2px 2px 1px rgb(255, 232, 232);
+}
+
+body {
+    background-color: pink;
+}
+
+.img1 {
+    float: right;
+    animation-name: moveLeft;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.link {
+    color: rgb(253, 243, 155);
+    font-family: "PressStart2P";
+    font-size: 2em;
+    font-weight: 100;
+    text-shadow: 1px 1px 1px rgb(255, 171, 171),
+                 2px 2px 1px rgb(255, 232, 232);
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.5s;
+    animation-name: moveUp;
+    animation-duration: 1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.link:hover, .link:focus {
+    color: #ffefef;
+}
+
+.image {
+    object-fit: cover;
+} 
+
+.cart_block {
+    color: rgb(253, 243, 155);
+    font-family: "PressStart2P";
+    font-size: 2em;
+    font-weight: 100;
+    text-shadow: 1px 1px 1px rgb(255, 171, 171),
+                 2px 2px 1px rgb(255, 232, 232);
+    animation-name: movedown;
+    animation-duration: 1s;
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    height: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(255, 171, 171, 0);
+    background-color: rgba(255, 171, 171, 0);
+}
+
+.lnk {
+    font-family: "HyperSpace";
+    font-size: 2rem;
+    color: aliceblue;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.lnk:hover, .lnk:focus {
+    color: rgb(253, 243, 155);
+}
