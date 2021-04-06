@@ -5,6 +5,8 @@ from .cart import Cart
 from .forms import CartAddProductForm
 
 
+# метод получения запроса и номера игрушки и добавление ее в корзину
+# method for receiving the request and the number of the toy and adding it to the cart
 @require_POST
 def cart_add(request, toy_id):
     cart = Cart(request)
@@ -15,9 +17,11 @@ def cart_add(request, toy_id):
         cart.add(toy=toy,
                  quantity=cd['quantity'],
                  update_quantity=cd['update'])
-    return redirect('cart:cart_detail')
+    return redirect('cart:cart_detail') # перенаправление к деталям корзины
 
 
+# метод удаление игрушки из корзины
+# method for removing a toy from the cart
 def cart_remove(request, toy_id):
     cart = Cart(request)
     toy = get_object_or_404(Toy, id=toy_id)
@@ -25,6 +29,8 @@ def cart_remove(request, toy_id):
     return redirect('cart:cart_detail')
 
 
+# детали корзины
+# cart details
 def cart_detail(request):
     cart = Cart(request)
     context = {'cart': cart}
