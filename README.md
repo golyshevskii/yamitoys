@@ -8,9 +8,9 @@
 > My first mini project, which is about a toy website.<br/>
 > Based on the Python programming language and the Django Framework (｡◕‿◕｡)
 ## YAMI
-### toys
+### toys (￣▽￣)
 ![YAMI](YamiToys1.png)
-### details
+### details ٩(◕‿◕)۶
 ![YAMI](YamiToys2.png)
-### cart
+### cart (≧◡≦)
 ![YAMI](YamiToys3.png)
