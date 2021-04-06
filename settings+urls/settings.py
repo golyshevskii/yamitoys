@@ -23,8 +23,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'toys.apps.ToysConfig', # внесение в список приложений Toys, Cart
-    'cart.apps.CartConfig', # listing of Toys, Cart applications
+    'toys.apps.ToysConfig',        # внесение в список приложений Toys, Cart
+    'cart.apps.CartConfig',        # listing of Toys, Cart applications
 ]
 
 MIDDLEWARE = [
@@ -51,6 +51,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'cart.context_processors.cart',                        # контекстный процессор для корзины
             ],
         },
     },
