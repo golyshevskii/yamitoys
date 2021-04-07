@@ -25,6 +25,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'toys.apps.ToysConfig',        # внесение в список приложений Toys, Cart
     'cart.apps.CartConfig',        # listing of Toys, Cart applications
+    'orders.apps.OrdersConfig',    # приложение Orders
+    'django_celery_beat',          # подключение Celery
 ]
 
 MIDDLEWARE = [
@@ -107,12 +109,19 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-
 STATIC_URL = '/static/'
 
 # ключ, для хранение корзины покупок в сессиях
 # key, for storing the shopping cart in sessions
 CART_SESSION_ID = 'cart' 
 
+# ключи хранения изображений
+# keys for storing images
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+# подключение Redis + Celery для отправки сообщений на эл.почту
+# connecting Redis + Celery to send messages to email
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+BROKER_URL = 'redis://127.0.0.1:6379/0'
+BROKER_TRANSPORT = 'redis'
