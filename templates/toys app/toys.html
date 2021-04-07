@@ -11,6 +11,12 @@
     </head>
     <body>
       <h1 class="h_1">игрушки</h1>
+      <div class="sidebar">
+          <a class="link1" href="{% url 'toys:all_toys' %}">все</a>
+        {% for tp in types %}
+          <p><a class="link1" href="{{ tp.get_absolute_url }}">{{ tp.name }}</a></p>
+        {% endfor %}
+      </div>
       <div class="container">
           <div class="row">
             {% for ty in toy %}
@@ -20,7 +26,7 @@
                   <img class='image' src="{% if ty.image %} {{ ty.image.url }} {% else %} {% static 'img/PUPA2.gif' %} {% endif %}" height="450" width="350">
                 </a>
                 <a class="link1" href="{{ ty.get_absolute_url }}">{{ ty.name }}</a><br>
-                <p class="toy"><b>{{ ty.price }}$$$</b></p>
+                <p class="toy"><b>${{ ty.price }}</b></p>
               </div>
             </div>
             {% endfor %}
