@@ -6,6 +6,7 @@ from .models import Order
 @app.task
 def order_created(order_id):
     # отправка уведомления по электронной почте при успешном создании заказа
+    # send email notification when order is successfully created
     order = Order.objects.get(id=order_id)
     subject = 'Заказ №. {}'.format(order_id)
     message = 'Привет {0} (◕‿◕),\n\n\
