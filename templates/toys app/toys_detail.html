@@ -19,10 +19,9 @@
                   <h2 class="h_2">{{ toy.name }}</h2>
                   <a class="link1" href="{{ toy.typ.get_absolute_url }}">{{ toy.typ }}</a>
                   <p class="toy"><b>{{ toy.content }}</b></p>
-                  <p class="toy"><b>{{ toy.price }}$$$</b></p>
+                  <p class="toy"><b>${{ toy.price }}</b></p>
                   <form action="{% url 'cart:cart_add' toy.id %}" method="post">
-                    <b>{{ cart_toy_form }}
-                    {% csrf_token %}</b>
+                    <b>{{ cart_toy_form }} {% csrf_token %}</b> 
                     <input type="submit" value="добавить">
                   </form>
                 </div>
