@@ -23,15 +23,16 @@
                     <h2 class="h_2">{{ t.name }}</h2>
                     <p class="toy"><b>количество: {{ item.quantity }}</b></p>
                     <a class="link1" href="{% url 'cart:cart_remove' t.id %}">удалить</a>
-                    <p class="toy"><b>цена за 1: {{ item.price }}$$$</b></p>
-                    <p class="toy"><b>общая цена: {{ item.total_price }}$$$</b></p>
+                    <p class="toy"><b>цена за 1: ${{ item.price }}</b></p>
+                    <p class="toy"><b>общая цена: ${{ item.total_price }}</b></p>
                   </div>
                 </div>
               {% endwith %}
             {% endfor %}
           </div>
         </div>
-        <p class="p1">общая сумма = {{ cart.get_total_price }}$$$</p>
+        <p class="p1">общая сумма = ${{ cart.get_total_price }}</p>
+        <a href="{% url 'orders:order_create' %}" class="link3">оформить покупку</a>
     </body>
     {% endblock %}
 </html>
